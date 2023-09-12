@@ -2,7 +2,7 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-" Disable Vi compatibility (emulation of old bugs)
+" Disable vi compatibility (emulation of old bugs).
 set nocompatible
 
 syntax on
@@ -18,10 +18,10 @@ set smartindent
 set number
 " set relativenumber
 
-" Highlight matching braces
+" Highlight matching braces.
 set showmatch
 
-" Opens split-tabs to the right.
+" Open split-tabs to the right.
 set splitright
 
 set mouse=a
@@ -72,6 +72,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
+" Heuristically set buffer options (e.g. shiftwidth and expandtab).
 Plug 'tpope/vim-sleuth'
 call plug#end()
 

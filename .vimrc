@@ -35,7 +35,8 @@ autocmd Filetype c setlocal tabstop=8 shiftwidth=8 noexpandtab
 autocmd Filetype cpp setlocal tabstop=8 shiftwidth=8 noexpandtab
 autocmd Filetype make setlocal tabstop=8 shiftwidth=8 noexpandtab
 
-nmap <F12> :NERDTreeToggle<CR>
+" Modify default tab line to display tab number.
+source ~/my-tab-line.vim
 
 if has('macunix')
     " set tags+=~/Qt/6.4.2/macos/lib/QtCore.framework/Versions/A/Headers/tags
@@ -75,4 +76,6 @@ Plug 'jiangmiao/auto-pairs'
 " Heuristically set buffer options (e.g. shiftwidth and expandtab).
 Plug 'tpope/vim-sleuth'
 call plug#end()
+
+nmap <F12> :NERDTreeToggle<CR>
 

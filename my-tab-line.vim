@@ -1,26 +1,27 @@
-set showtabline=1  " 1 to show tabline only when more than one tab is present
-set tabline=%!MyTabLine()  " custom tab pages line
-function! MyTabLine() " acclamation to avoid conflict
-    let s = '' " complete tabline goes here
+" 1 to show tab line only when more than one tab is present
+set showtabline=1
+" custom tab pages line
+set tabline=%!MyTabLine()
+" acclamation to avoid conflict
+function! MyTabLine()
+    " complete tabline goes here
+    let s = '' 
     " loop through each tab page
-    for t in range(tabpagenr('$'))
+    for i in range(tabpagenr('$'))
+        let tab = i + 1
         " set highlight
-        if t + 1 == tabpagenr()
-            let s .= '%#TabLineSel#'
-        else
-            let s .= '%#TabLine#'
-        endif
+        let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
         " set the tab page number (for mouse clicks)
-        let s .= '%' . (t + 1) . 'T'
+        let s .= '%' . tab . 'T'
         let s .= ' '
         " set page number string
-        let s .= t + 1 . ' '
+        let s .= tab . ' '
         " get buffer names and statuses
         let n = ''      " temp string for buffer names while we loop and check buftype
         let m = 0       " &modified counter
-        let bc = len(tabpagebuflist(t + 1))     " counter to avoid last ' '
+        let bc = len(tabpagebuflist(tab))     " counter to avoid last ' '
         " loop through each buffer in a tab
-        for b in tabpagebuflist(t + 1)
+        for b in tabpagebuflist(tab)
             " buffer types: quickfix gets a [Q], help gets [H]{base fname}
             " others get 1dir/2dir/3dir/fname shortened to 1/2/3/fname
             if getbufvar( b, "&buftype"  ) == 'help'
@@ -48,17 +49,9 @@ function! MyTabLine() " acclamation to avoid conflict
         " select the highlighting for the buffer names
         " my default highlighting only underlines the active tab
         " buffer names.
-        if t + 1 == tabpagenr()
-            let s .= '%#TabLineSel#'
-        else
-            let s .= '%#TabLine#'
-        endif
+        let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
         " add buffer names
-        if n == ''
-            let s.= '[New]'
-        else
-            let s .= n
-        endif
+        let s .= (n == '' ? '[New]' : n)
         " switch to no underlining and add final space to buffer list
         let s .= ' '
     endfor
@@ -67,6 +60,7 @@ function! MyTabLine() " acclamation to avoid conflict
     " right-align the label to close the current tab page
     if tabpagenr('$') > 1
         let s .= '%=%#TabLineFill#%999Xclose'
+        " let s .= '%=%999XX' " Mine.
     endif
     return s
 endfunction"

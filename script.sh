@@ -18,7 +18,7 @@ done
 for ((i=1; i<=${#file_paths[@]}; i++)); do
     diff ${file_paths[$i]} ${files[$i]} >/dev/null
 
-    # If the file has changed,
+    # If the file has been changed,
     if [ $? -ne 0 ]; then
         # copy it.
         cp ${file_paths[$i]} ${files[$i]}

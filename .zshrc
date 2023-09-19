@@ -2,7 +2,8 @@
 export CLICOLOR=1
 alias ls='ls -lFhG'
 alias la='ls -a'
-alias ctags_cpp='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ .'
+alias ctags-cpp='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
 
 export PATH='/usr/local/opt/postgresql@15/bin/:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/usr/local/bin'
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+export PATH="$PATH:$HOME/bin"

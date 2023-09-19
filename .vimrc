@@ -38,18 +38,18 @@ autocmd Filetype make setlocal tabstop=8 shiftwidth=8 noexpandtab
 " Modify default tab line to display tab number.
 source ~/my-tab-line.vim
 
+" set tags=.tags;$HOME
 if has('macunix')
-    " set tags+=~/Qt/6.4.2/macos/lib/QtCore.framework/Versions/A/Headers/tags
-    " set tags+=~/Qt/6.4.2/macos/lib/QtWidgets.framework/Versions/A/Headers/tags
-    set tags+=/Library/Developer/CommandLineTools/usr/include/c++/v1/tags
+    set tags+=/usr/local/Cellar/grpc/1.58.1/include/.tags
+    set tags+=/Library/Developer/CommandLineTools/usr/include/c++/v1/.tags
+    " set tags+=$HOME/Qt/6.4.2/macos/lib/QtCore.framework/Versions/A/Headers/.tags
+    " set tags+=$HOME/Qt/6.4.2/macos/lib/QtWidgets.framework/Versions/A/Headers/.tags
 else
     if has('unix')
-        set tags+=/usr/include/c++/11/tags
-        set tags+=/usr/local/include/pqxx/tags
+        " set tags+=/usr/include/c++/11/.tags
+        " set tags+=/usr/local/include/pqxx/.tags
     endif
 endif
-
-" set tags+=./tags
 
 " Automatic installation of vim-plug.
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'

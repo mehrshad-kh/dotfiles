@@ -40,8 +40,8 @@ source ~/my-tab-line.vim
 
 " set tags=.tags;$HOME
 if has('macunix')
-    set tags+=/usr/local/Cellar/grpc/1.58.1/include/.tags
     set tags+=/Library/Developer/CommandLineTools/usr/include/c++/v1/.tags
+    " set tags+=/usr/local/Cellar/grpc/1.58.1/include/.tags
     " set tags+=$HOME/Qt/6.4.2/macos/lib/QtCore.framework/Versions/A/Headers/.tags
     " set tags+=$HOME/Qt/6.4.2/macos/lib/QtWidgets.framework/Versions/A/Headers/.tags
 else

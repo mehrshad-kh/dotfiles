@@ -1,28 +1,36 @@
 #!/bin/zsh
 # Not part of my personal dotfiles.
 
-files=($(ls -a | grep -v "\.swp$"))
-ignored_files=(. .. .git .gitignore script.sh README.md)
-
-for ignored_file in ${ignored_files[@]}; do
-    # Find the index of first occurrence of ignored_file in files. Then,
-    # set it to nothing (remove the item).
-    files[${files[(i)$ignored_file]}]=()
+files=($(find . -type f -maxdepth 1 | grep -v "\.swp$" | sort))
+for ((i=1; i<=${#files[@]}; i++))
+do
+    files[$i]=$(echo ${files[$i]} | cut -d "/" -f 2)
 done
 
-file_paths=()
-for file in ${files[@]}; do
-    file_paths+=$HOME/$file
+tmp=$(mktemp)
+for file in ${files[@]}
+do
+    echo $file >> $tmp
 done
 
-for ((i=1; i<=${#file_paths[@]}; i++)); do
-    diff ${file_paths[$i]} ${files[$i]} >/dev/null
+good_files=($(comm -23 ${tmp} .ignore))
+good_file_paths=()
+for file in ${good_files[@]}; do
+    good_file_paths+=$HOME/${file}
+done
 
-    # If the file has been changed,
-    if [ $? -ne 0 ]; then
+for ((i=1; i<=${#good_file_paths[@]}; i++))
+do
+    diff ${good_file_paths[$i]} ${good_files[$i]} > /dev/null
+
+    # If the file has been changed, then
+    if [ $? -ne 0 ]
+    then
         # copy it.
-        cp ${file_paths[$i]} ${files[$i]}
+        cp ${good_file_paths[$i]} ${good_files[$i]}
     fi
 done
+
+rm ${tmp}
 
 exit 0

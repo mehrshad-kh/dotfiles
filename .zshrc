@@ -1,4 +1,3 @@
-# alias u-ctags="/usr/local/Cellar/universal-ctags/p6.0.20230212.0/bin/ctags"
 alias ctags-cpp='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
 alias gs='git status'
 alias ls='ls -lFhG'

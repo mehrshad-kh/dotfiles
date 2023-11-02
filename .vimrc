@@ -32,8 +32,8 @@ set expandtab
 
 autocmd Filetype proto setlocal tabstop=2 expandtab
 autocmd Filetype c setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd Filetype cpp setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd Filetype make setlocal tabstop=8 shiftwidth=8 noexpandtab
+autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd Filetype make setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 " Modify default tab line to display tab number.
 source ~/my-tab-line.vim
@@ -41,7 +41,7 @@ source ~/my-tab-line.vim
 " set tags=.tags;$HOME
 if has('macunix')
     set tags+=/Library/Developer/CommandLineTools/usr/include/c++/v1/.tags
-    " set tags+=/usr/local/Cellar/grpc/1.58.1/include/.tags
+    set tags+=/usr/local/Cellar/grpc/1.58.1/include/.tags
     " set tags+=$HOME/Qt/6.4.2/macos/lib/QtCore.framework/Versions/A/Headers/.tags
     " set tags+=$HOME/Qt/6.4.2/macos/lib/QtWidgets.framework/Versions/A/Headers/.tags
 else

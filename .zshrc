@@ -1,3 +1,4 @@
+alias curlx='curl -L -O -C - -f'
 alias ctags-cpp='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
 alias gs='git status'
 alias ls='ls -lFhG'

@@ -3,7 +3,9 @@ alias gs='git status'
 alias ls='ls -lFhG'
 alias la='ls -a'
 alias mcurl='curl -L -O -C - -f'
+alias mclang='clang++ main.cpp -o main -std=c++17'
 alias mffplay='ffplay -fs -autoexit'
+alias mff='mffplay'
 
 export CLICOLOR=1
 export PATH='/usr/local/opt/postgresql@15/bin/:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/usr/local/bin'

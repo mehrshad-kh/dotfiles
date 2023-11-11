@@ -2,7 +2,7 @@ alias ctags-cpp='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --langua
 alias gs='git status'
 alias ls='ls -lFhG'
 alias la='ls -a'
-alias mcurl='curl -L -O -C - -f'
+alias mcurl='curl -L -O -C - -f  --retry-all-errors --retry-max-time 120'
 alias mclang='clang++ main.cpp -o main -std=c++17'
 alias mffplay='ffplay -fs -autoexit'
 alias mff='mffplay'

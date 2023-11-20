@@ -17,4 +17,4 @@ export PATH='/usr/local/opt/postgresql@15/bin/:/Library/Frameworks/Python.framew
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 export PATH="$PATH:$HOME/bin"
 
-iCloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
+icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"

@@ -24,7 +24,8 @@ set showmatch
 " Open split-tabs to the right.
 set splitright
 
-set mouse=a
+" Enable mouse scrolling.
+" set mouse=a
 
 set tabstop=4 
 set shiftwidth=4
@@ -103,19 +104,29 @@ function! MyTabLine()
     return s
 endfunction"
 
+" If built by Homebrew, then
+if has('patch2100')
+    " Backspace over everything in insert mode.
+    set backspace=indent,eol,start 
+endif
+
 " set tags=.tags;$HOME
+"
+" If on Mac, then
 if has('macunix')
     set tags+=/Library/Developer/CommandLineTools/usr/include/c++/v1/.tags
     set tags+=/usr/local/Cellar/grpc/1.58.1/include/.tags
     " set tags+=$HOME/Qt/6.4.2/macos/lib/QtCore.framework/Versions/A/Headers/.tags
     " set tags+=$HOME/Qt/6.4.2/macos/lib/QtWidgets.framework/Versions/A/Headers/.tags
 else
+    " If on Linux, then
     if has('unix')
         " set tags+=/usr/include/c++/11/.tags
         " set tags+=/usr/local/include/pqxx/.tags
     endif
 endif
 
+" I use vim-plug as the plug-in manager.
 " Automatic installation of vim-plug.
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -134,14 +145,21 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+" Use the Ruby implementation of Command-T as versions 6.x and higher require
+" Lua and Neovim.
+let g:CommandTPreferredImplementation='ruby'
+
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 " Heuristically set buffer options (e.g. shiftwidth and expandtab).
 Plug 'tpope/vim-sleuth'
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+    \ }
 call plug#end()
 
 nmap <F12> :NERDTreeToggle<CR>
-nmap <C-s> :w<CR>
-imap <C-s> <Esc> :w<CR>
+map <C-s> <Esc>:w<CR>
+imap <C-s> <Esc>:w<CR>

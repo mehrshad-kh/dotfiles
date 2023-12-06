@@ -1,3 +1,4 @@
+alias gc='git commit -a -m'
 alias gs='git status'
 alias la='ls -a'
 alias ls='ls -lFhG'

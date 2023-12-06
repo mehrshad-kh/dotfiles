@@ -1,7 +1,9 @@
 alias gc='git commit -a -m'
+alias gp='git push'
 alias gs='git status'
 alias la='ls -a'
 alias ls='ls -lFhG'
+alias sz='source ~/.zshrc'
 
 # Default macOS Vi,.
 alias dvi='/usr/bin/vi'

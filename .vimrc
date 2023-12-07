@@ -32,7 +32,7 @@ set shiftwidth=4
 set expandtab
 
 autocmd Filetype proto setlocal tabstop=2 expandtab
-autocmd Filetype c setlocal tabstop=8 shiftwidth=8 noexpandtab
+autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd Filetype make setlocal tabstop=4 shiftwidth=4 expandtab
 

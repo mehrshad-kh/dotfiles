@@ -5,6 +5,8 @@ alias la='ls -a'
 alias ls='ls -lFhG'
 alias sz='source ~/.zshrc'
 
+alias run='./main'
+
 # Default macOS Vi,.
 alias dvi='/usr/bin/vi'
 alias dvim='/usr/bin/vim'

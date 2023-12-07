@@ -1,7 +1,7 @@
-.
-..
+# Not part of my dotfiles.
+
+.bashrc
 .DS_Store
-.git
 .gitignore
 .ignore
 README.md

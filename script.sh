@@ -1,9 +1,7 @@
 #!/bin/zsh
-# Not part of my personal dotfiles.
 
 files=($(find . -type f -maxdepth 1 | grep -v "\.swp$" | sort))
-for ((i=1; i<=${#files[@]}; i++))
-do
+for ((i=1; i<=${#files[@]}; i++)); do
     files[$i]=$(echo ${files[$i]} | cut -d "/" -f 2)
 done
 

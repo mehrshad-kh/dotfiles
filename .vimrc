@@ -33,8 +33,8 @@ set expandtab
 
 autocmd Filetype proto setlocal tabstop=2 expandtab
 autocmd Filetype c setlocal tabstop=8 shiftwidth=8 noexpandtab
-autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 noexpandtab
-autocmd Filetype make setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd Filetype make setlocal tabstop=4 shiftwidth=4 expandtab
 
 " Modify default tab line in order to display tab numbers.
 " 1 to show tab line only when more than one tab is present

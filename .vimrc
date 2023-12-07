@@ -161,5 +161,5 @@ Plug 'wincent/command-t', {
 call plug#end()
 
 nmap <F12> :NERDTreeToggle<CR>
-map <C-s> <Esc>:w<CR>
+map <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>

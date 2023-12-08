@@ -145,19 +145,24 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-" Use the Ruby implementation of Command-T as versions 6.x and higher require
-" Lua and Neovim.
+" Use the Ruby implementation of Command-T.
 let g:CommandTPreferredImplementation='ruby'
+let g:ycm_enable_semantic_highlighting=1
+" Let clangd fully control code completion
+" let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")
 
 call plug#begin()
-Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
 " Heuristically set buffer options (e.g. shiftwidth and expandtab).
 Plug 'tpope/vim-sleuth'
+Plug 'vim-airline/vim-airline'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 nmap <F12> :NERDTreeToggle<CR>

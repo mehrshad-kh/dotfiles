@@ -13,6 +13,7 @@ alias mkhr='makehere.sh'
 alias dvi='/usr/bin/vi'
 alias dvim='/usr/bin/vim'
 
+alias hpython3='/usr/local/bin/python3'
 alias hruby='/usr/local/Cellar/ruby/3.2.2_1/bin/ruby'
 # Homebrew versions which conflict with system-provided tools.
 alias hvi='/usr/local/Cellar/vim/*/bin/vi'

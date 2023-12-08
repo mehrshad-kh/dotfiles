@@ -1,3 +1,4 @@
+alias cl='clear'
 alias gc='git commit -a -m'
 alias gp='git push'
 alias gs='git status'
@@ -6,6 +7,7 @@ alias ls='ls -lFhG'
 alias sz='source ~/.zshrc'
 
 alias run='./main'
+alias mkhr='makehere.sh'
 
 # Default macOS Vi,.
 alias dvi='/usr/bin/vi'

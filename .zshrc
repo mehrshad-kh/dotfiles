@@ -31,9 +31,11 @@ alias mff='mffplay'
 
 export CLICOLOR=1
 export PATH='/usr/local/opt/postgresql@15/bin/:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/usr/local/bin'
-export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 # Add my bin directory.
 export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:/Library/TeX/texbin"
 
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
+projects="$HOME/Desktop/projects"

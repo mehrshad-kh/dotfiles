@@ -21,7 +21,7 @@ set number
 " Highlight matching braces.
 set showmatch
 
-" Open split-tabs to the right.
+" Open split tabs to the right.
 set splitright
 
 " Enable mouse scrolling.
@@ -31,10 +31,20 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-autocmd Filetype proto setlocal tabstop=2 expandtab
-autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd Filetype make setlocal tabstop=4 shiftwidth=4 expandtab
+" autocmd Filetype proto setlocal tabstop=2 expandtab
+" autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab
+" autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 expandtab
+" autocmd Filetype make setlocal tabstop=4 shiftwidth=4 expandtab
+
+autocmd FileType c,cpp nnoremap <buffer> <localleader>c I// <Esc>
+autocmd FileType python,zsh nnoremap <buffer> <localleader>c I# <Esc>
+autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
+
+autocmd FileType c,cpp nnoremap <buffer> <localleader>u ^3x
+autocmd FileType python,zsh nnoremap <buffer> <localleader>c ^2x
+autocmd FileType vim nnoremap <buffer> <localleader>c ^2x
+
+autocmd BufNewFile *.sh :set filetype=zsh
 
 " Modify default tab line in order to display tab numbers.
 " 1 to show tab line only when more than one tab is present
@@ -146,12 +156,17 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 " Use the Ruby implementation of Command-T.
-let g:CommandTPreferredImplementation='ruby'
-let g:ycm_enable_semantic_highlighting=1
+let g:CommandTPreferredImplementation = 'ruby'
+let g:ycm_enable_semantic_highlighting = 1
 " Let clangd fully control code completion
 " let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
+
+" Turn off syntax checker UI.
+let g:ycm_show_diagnostics_ui = 0
+" Disable showing documentation in a popup.
+let g:ycm_auto_hover = ''
 
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'
@@ -166,5 +181,6 @@ Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 nmap <F12> :NERDTreeToggle<CR>
+nmap <leader>D <plug>(YCMHover)
 map <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>

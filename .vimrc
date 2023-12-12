@@ -167,6 +167,8 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 let g:ycm_show_diagnostics_ui = 0
 " Disable showing documentation in a popup.
 let g:ycm_auto_hover = ''
+" Disable completion suggestions.
+let g:ycm_auto_trigger = 0
 
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'

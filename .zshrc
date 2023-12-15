@@ -6,8 +6,9 @@ alias la='ls -a'
 alias ls='ls -lFhG'
 alias sz='source ~/.zshrc'
 
-alias run='./main'
+alias trash='~/bin/trash.sh'
 alias mkhr='makehere.sh'
+alias run='./main'
 
 # Default macOS Vi,.
 alias dvi='/usr/bin/vi'
@@ -38,4 +39,3 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:/Library/TeX/texbin"
 
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
-projects="$HOME/Desktop/projects"

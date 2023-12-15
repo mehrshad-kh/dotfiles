@@ -182,7 +182,8 @@ Plug 'wincent/command-t', {
 Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
+imap <C-s> <Esc>:w<CR>
+map <C-s> :w<CR>
+map <leader>g :YcmCompleter GoToDefinition<CR>
 nmap <F12> :NERDTreeToggle<CR>
 nmap <leader>D <plug>(YCMHover)
-map <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>

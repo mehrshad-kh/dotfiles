@@ -15,6 +15,7 @@ else
 endif
 set autoindent
 set smartindent
+set smarttab
 set number
 " set relativenumber
 
@@ -34,7 +35,7 @@ set expandtab
 " autocmd Filetype proto setlocal tabstop=2 expandtab
 " autocmd Filetype c setlocal tabstop=4 shiftwidth=4 expandtab
 " autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 expandtab
-" autocmd Filetype make setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd Filetype make setlocal noexpandtab
 
 autocmd FileType c,cpp nnoremap <buffer> <localleader>c I// <Esc>
 autocmd FileType python,zsh nnoremap <buffer> <localleader>c I# <Esc>

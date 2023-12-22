@@ -4,6 +4,7 @@ alias gp='git push'
 alias gs='git status'
 alias la='ls -a'
 alias ls='ls -lFhG'
+alias nj='ninja'
 alias sz='source ~/.zshrc'
 
 alias trash='~/bin/trash.sh'

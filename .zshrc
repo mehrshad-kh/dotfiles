@@ -49,3 +49,4 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:/Library/TeX/texbin"
 
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
+projects="$HOME/Desktop/projects"

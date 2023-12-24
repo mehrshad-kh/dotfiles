@@ -37,7 +37,7 @@ set expandtab
 " autocmd Filetype cpp setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd Filetype make setlocal noexpandtab
 
-autocmd FileType c,cpp nnoremap <buffer> <localleader>c I// <Esc>
+autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>
 autocmd FileType cmake,python,zsh nnoremap <buffer> <localleader>c I# <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
 

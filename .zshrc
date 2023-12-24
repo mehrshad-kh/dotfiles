@@ -23,12 +23,20 @@ alias hvi='/usr/local/Cellar/vim/*/bin/vi'
 alias hvim='/usr/local/Cellar/vim/*/bin/vim'
 
 # My personal configurations.
+# -R: recurse directories.
 alias mctags='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
+
+# -L, --location: Follow the request onto the last location.
+# -O, --remote-name: Write output to a local file named like the remote file we get.
+# -f, --fail: Fail silently.
 alias mcurl='curl -L -O -C - -f  --retry-all-errors --retry-max-time 120'
 alias mclang='clang main.c -o main'
 alias mc='mclang'
 alias mclang++='clang++ main.cpp -o main -std=c++17'
 alias mc++='mclang++'
+
+# -fs: full screen
+# -autoexit: quit after video ends.
 alias mffplay='ffplay -fs -autoexit'
 alias mff='mffplay'
 

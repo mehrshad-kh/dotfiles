@@ -38,7 +38,7 @@ set expandtab
 autocmd Filetype make setlocal noexpandtab
 
 autocmd FileType c,cpp nnoremap <buffer> <localleader>c I// <Esc>
-autocmd FileType python,zsh nnoremap <buffer> <localleader>c I# <Esc>
+autocmd FileType cmake,python,zsh nnoremap <buffer> <localleader>c I# <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
 
 autocmd FileType c,cpp nnoremap <buffer> <localleader>u ^3x

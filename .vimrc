@@ -158,18 +158,22 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Use the Ruby implementation of Command-T.
 let g:CommandTPreferredImplementation = 'ruby'
-let g:ycm_enable_semantic_highlighting = 1
+
+" Disable showing documentation in a popup.
+let g:ycm_auto_hover = ''
+
+" Disable completion suggestions.
+let g:ycm_auto_trigger = 0
+
 " Let clangd fully control code completion
 " let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
+let g:ycm_enable_semantic_highlighting = 1
+let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 2} 
 
 " Turn off syntax checker UI.
 let g:ycm_show_diagnostics_ui = 0
-" Disable showing documentation in a popup.
-let g:ycm_auto_hover = ''
-" Disable completion suggestions.
-let g:ycm_auto_trigger = 0
 
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'

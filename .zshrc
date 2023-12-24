@@ -5,6 +5,7 @@ alias gs='git status'
 alias la='ls -a'
 alias ls='ls -lFhG'
 alias nj='ninja'
+alias op='open *.app'
 alias sz='source ~/.zshrc'
 
 alias trash='~/bin/trash.sh'

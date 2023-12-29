@@ -10,14 +10,17 @@ alias sz='source ~/.zshrc'
 
 alias trash='~/bin/trash.sh'
 alias mkhr='makehere.sh'
-alias run='./main'
+alias sql='sqlite3'
 
-# Default macOS Vi,.
+# Default macOS Vim.
+alias dtclsh='/usr/bin/tclsh'
 alias dvi='/usr/bin/vi'
 alias dvim='/usr/bin/vim'
 
 alias hpython3='/usr/local/bin/python3'
 alias hruby='/usr/local/Cellar/ruby/3.2.2_1/bin/ruby'
+alias htclsh='/usr/local/bin/tclsh'
+alias tcl='htclsh'
 # Homebrew versions which conflict with system-provided tools.
 alias hvi='/usr/local/Cellar/vim/*/bin/vi'
 alias hvim='/usr/local/Cellar/vim/*/bin/vim'

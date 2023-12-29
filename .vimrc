@@ -39,11 +39,11 @@ autocmd Filetype make setlocal noexpandtab
 
 autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>
 autocmd FileType cmake,python,zsh nnoremap <buffer> <localleader>c I# <Esc>
+autocmd FileType sql nnoremap <buffer> <localleader>c I-- <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
 
-autocmd FileType c,cpp nnoremap <buffer> <localleader>u ^3x
-autocmd FileType python,zsh nnoremap <buffer> <localleader>c ^2x
-autocmd FileType vim nnoremap <buffer> <localleader>c ^2x
+autocmd FileType c,cpp,sql,verilog nnoremap <buffer> <localleader>u ^3x
+autocmd FileType cmake,python,vim,zsh nnoremap <buffer> <localleader>u ^2x
 
 autocmd BufNewFile *.sh :set filetype=zsh
 

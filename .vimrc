@@ -170,14 +170,19 @@ let g:ycm_auto_trigger = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
 let g:ycm_enable_semantic_highlighting = 1
-let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 2} 
+let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 2, 'python': 3} 
+
+" let g:ycm_server_python_interpreter='/usr/bin/python3'
 
 " Turn off syntax checker UI.
 let g:ycm_show_diagnostics_ui = 0
 
+" Dsiplay tabline from vim-airline.
+let g:airline#extensions#tabline#enabled = 1
+
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 " Heuristically set buffer options (e.g. shiftwidth and expandtab).
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
@@ -190,5 +195,5 @@ call plug#end()
 imap <C-s> <Esc>:w<CR>
 map <C-s> :w<CR>
 map <leader>g :YcmCompleter GoToDefinition<CR>
-nmap <F12> :NERDTreeToggle<CR>
+" nmap <F12> :NERDTreeToggle<CR>
 nmap <leader>D <plug>(YCMHover)

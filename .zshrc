@@ -6,11 +6,12 @@ alias la='ls -a'
 alias ls='ls -lFhG'
 alias nj='ninja'
 alias op='open *.app'
+alias python='python3'
+alias sql='sqlite3'
 alias sz='source ~/.zshrc'
 
 alias trash='~/bin/trash.sh'
 alias mkhr='makehere.sh'
-alias sql='sqlite3'
 
 # Default macOS Vim.
 alias dtclsh='/usr/bin/tclsh'

@@ -9,6 +9,7 @@ alias op='open *.app'
 alias python='python3'
 alias sql='sqlite3'
 alias sz='source ~/.zshrc'
+alias tman='tman.sh'
 
 alias trash='~/bin/trash.sh'
 alias mkhr='makehere.sh'

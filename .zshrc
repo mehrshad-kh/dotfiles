@@ -12,7 +12,8 @@ alias sz='source ~/.zshrc'
 alias tman='tman.sh'
 
 alias trash='~/bin/trash.sh'
-alias mkhr='makehere.sh'
+alias makehere='makehere.sh'
+alias mkhr='makehere'
 
 # Default macOS Vim.
 alias dtclsh='/usr/bin/tclsh'
@@ -54,4 +55,3 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:/Library/TeX/texbin"
 
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
-projects="$HOME/Desktop/projects"

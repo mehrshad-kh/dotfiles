@@ -19,11 +19,11 @@ set smarttab
 set number
 " set relativenumber
 
-" Highlight matching braces.
-set showmatch
-
 " Open split tabs to the right.
 set splitright
+
+" For bi-directional text.
+" set termbidi
 
 " Enable mouse scrolling.
 " set mouse=a
@@ -38,11 +38,14 @@ autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>
 autocmd FileType cmake,python,tcl,zsh nnoremap <buffer> <localleader>c I# <Esc>
 autocmd FileType sql nnoremap <buffer> <localleader>c I-- <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
+autocmd FileType tex nnoremap <buffer> <localleader>c % <Esc>
 
 autocmd FileType c,cpp,sql,verilog nnoremap <buffer> <localleader>u ^3x
-autocmd FileType cmake,python,vim,zsh nnoremap <buffer> <localleader>u ^2x
+autocmd FileType cmake,python,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
 
 autocmd BufNewFile *.sh :set filetype=zsh
+autocmd BufNewFile,BufRead *.v :set filetype=verilog
+autocmd BufNewFile,BufRead *.verilog :set filetype=verilog
 
 " Modify default tab line in order to display tab numbers.
 " 1 to show tab line only when more than one tab is present
@@ -139,7 +142,7 @@ let g:ycm_auto_hover = ''
 " Disable completion suggestions.
 let g:ycm_auto_trigger = 0
 
-" Let clangd fully control code completion
+" Let clangd fully control code completion.
 " let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
@@ -155,19 +158,23 @@ let g:ycm_show_diagnostics_ui = 0
 
 " Dsiplay tabline from vim-airline.
 " let g:airline#extensions#tabline#enabled = 1
+" The following lines reduce start-up time.
+" Use Vim9 script.
+let g:airline_experimental = 1
+" Use a minimum set of extensions.
+let g:airline_extensions = []
+let g:airline_highlighting_cache = 1
 
 call plug#begin()
-" Heuristically set buffer options (e.g. shiftwidth and expandtab).
-Plug 'tpope/vim-sleuth'
-Plug 'vim-airline/vim-airline'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer', 'on': []}
 call plug#end()
 
 imap <C-s> <Esc>:w<CR>
-map <C-s> :w<CR>
+map <C-s> :wa<CR>
 map <leader>g :YcmCompleter GoToDefinition<CR>
-" nmap <F12> :NERDTreeToggle<CR>
-nmap <leader>D <plug>(YCMHover)
+map <leader>j :YcmCompleter GoToDefinition<CR>
+map <leader>y :call plug#load('YouCompleteMe')<CR>
+nmap <leader>d <plug>(YCMHover)

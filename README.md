@@ -1,4 +1,5 @@
 dotfiles
 ========
 
-A collection of my personal dotfiles.
+A collection of my dotfiles.
+

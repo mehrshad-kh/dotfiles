@@ -1,9 +1,13 @@
 alias cl='clear'
+# -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
+alias cp='cp -i'
 alias gc='git commit -a -m'
 alias gp='git push'
 alias gs='git status'
 alias la='ls -a'
 alias ls='ls -lFhG'
+# -i: Cause mv to write a prompt before moving a file that would overwrite an existing file.
+alias mv='mv -i'
 alias nj='ninja'
 alias op='open *.app'
 alias python='python3'
@@ -28,7 +32,6 @@ alias tcl='htclsh'
 alias hvi='/usr/local/Cellar/vim/*/bin/vi'
 alias hvim='/usr/local/Cellar/vim/*/bin/vim'
 
-# My personal configurations.
 # -R: recurse directories.
 alias mctags='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
 

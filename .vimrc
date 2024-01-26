@@ -158,12 +158,13 @@ let g:ycm_show_diagnostics_ui = 0
 
 " Dsiplay tabline from vim-airline.
 " let g:airline#extensions#tabline#enabled = 1
+
 " The following lines reduce start-up time.
 " Use Vim9 script.
-let g:airline_experimental = 1
+" let g:airline_experimental = 1
 " Use a minimum set of extensions.
-let g:airline_extensions = []
-let g:airline_highlighting_cache = 1
+" let g:airline_extensions = []
+" let g:airline_highlighting_cache = 1
 
 call plug#begin()
 Plug 'wincent/command-t', {

@@ -46,7 +46,7 @@ alias mc++='mclang++'
 
 # -fs: full screen
 # -autoexit: quit after video ends.
-alias mffplay='ffplay -fs -autoexit'
+alias mffplay='ffplay -fs -autoexit -loglevel warning'
 alias mff='mffplay'
 
 export CLICOLOR=1
@@ -55,6 +55,14 @@ export PATH='/usr/local/opt/postgresql@15/bin/:/Library/Frameworks/Python.framew
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 # Add my bin directory.
 export PATH="$PATH:$HOME/bin"
+# TeX
 export PATH="$PATH:/Library/TeX/texbin"
+# Flutter
+export PATH="$PATH:$HOME/development/flutter/bin"
+
+# Gem
+export GEM_HOME="$HOME/.gem"
+export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
 
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"

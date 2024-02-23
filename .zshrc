@@ -50,19 +50,18 @@ alias mffplay='ffplay -fs -autoexit -loglevel warning'
 alias mff='mffplay'
 
 export CLICOLOR=1
-export PATH='/usr/local/opt/postgresql@15/bin/:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/usr/local/bin'
+export PATH='/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/usr/local/bin'
 
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
 # Add my bin directory.
 export PATH="$PATH:$HOME/bin"
+
 # TeX
 export PATH="$PATH:/Library/TeX/texbin"
-# Flutter
-export PATH="$PATH:$HOME/development/flutter/bin"
 
-# Gem
-export GEM_HOME="$HOME/.gem"
-export PATH="$PATH:$GEM_HOME/bin"
-export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
-
+# Remote folders.
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
+
+# Local folders.
+movies="$HOME/Movies/Mine/movies"

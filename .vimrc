@@ -140,7 +140,7 @@ endif
 " Use the Ruby implementation of Command-T.
 let g:CommandTPreferredImplementation = 'ruby'
 
-" Disable showing documentation in a popup.
+" Disable showing documentation in a pop-up.
 let g:ycm_auto_hover = ''
 
 " Disable completion suggestions.
@@ -150,8 +150,7 @@ let g:ycm_auto_trigger = 0
 " let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
-" Use Homebrew's clangd
-" let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
+
 let g:ycm_enable_semantic_highlighting = 1
 let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 2, 'python': 3} 
 
@@ -159,6 +158,11 @@ let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 2, 'python': 3}
 
 " Turn off syntax checker UI.
 let g:ycm_show_diagnostics_ui = 0
+
+" For python-syntax.
+let g:python_highlight_all = 1
+let g:python_highlight_indent_errors = 0
+let g:python_highlight_space_errors = 0
 
 " Dsiplay tabline from vim-airline.
 " let g:airline#extensions#tabline#enabled = 1
@@ -175,11 +179,12 @@ Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer', 'on': []}
+Plug 'vim-python/python-syntax'
 call plug#end()
 
 imap <C-s> <Esc>:w<CR>
 map <C-s> :wa<CR>
-map <leader>g :YcmCompleter GoToDefinition<CR>
+map <leader>d :YcmCompleter GetDoc<CR>
 map <leader>j :YcmCompleter GoToDefinition<CR>
 map <leader>y :call plug#load('YouCompleteMe')<CR>
-nmap <leader>d <plug>(YCMHover)
+nmap <leader>h <plug>(YCMHover)

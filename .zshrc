@@ -11,13 +11,15 @@ alias mv='mv -i'
 alias nj='ninja'
 alias op='open *.app'
 alias python='python3'
-alias sql='sqlite3'
+alias sqlite='sqlite3'
+alias sql='sqlite'
 alias sz='source ~/.zshrc'
 alias tman='tman.sh'
 
-alias trash='~/bin/trash.sh'
+alias trash='trash.sh'
 alias makehere='makehere.sh'
 alias mkhr='makehere'
+alias co='compile.sh'
 
 # Default macOS Vim.
 alias dtclsh='/usr/bin/tclsh'
@@ -46,7 +48,7 @@ alias mc++='mclang++'
 
 # -fs: full screen
 # -autoexit: quit after video ends.
-alias mffplay='ffplay -fs -autoexit -loglevel warning'
+alias mffplay='ffplay -fs -autoexit -loglevel warning -stats'
 alias mff='mffplay'
 
 export CLICOLOR=1

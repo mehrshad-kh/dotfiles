@@ -1,5 +1,7 @@
 # Not part of my dotfiles.
 
+# Do not look for these files in the home directory.
+.alacritty.toml
 .bashrc
 .DS_Store
 .gitignore

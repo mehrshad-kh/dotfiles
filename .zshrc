@@ -56,7 +56,7 @@ export PATH='/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/b
 
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
-# Add my bin directory.
+# Add user bin directory.
 export PATH="$PATH:$HOME/bin"
 
 # TeX
@@ -67,3 +67,7 @@ icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 
 # Local folders.
 movies="$HOME/Movies/Mine/movies"
+notes="$HOME/Desktop/notes"
+projects="$HOME/Desktop/projects"
+prjcts="$projects"
+tmp="$HOME/Desktop/tmp"

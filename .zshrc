@@ -2,6 +2,7 @@ alias cl='clear'
 # -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
 alias cp='cp -i'
 alias gc='git commit -a -m'
+alias gf='git fetch'
 alias gp='git push'
 alias gs='git status'
 alias la='ls -a'
@@ -69,5 +70,5 @@ icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 movies="$HOME/Movies/Mine/movies"
 notes="$HOME/Desktop/notes"
 projects="$HOME/Desktop/projects"
-prjcts="$projects"
+series="$HOME/Movies/Mine/series"
 tmp="$HOME/Desktop/tmp"

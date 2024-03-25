@@ -1,7 +1,5 @@
 # Not part of my personal dotfiles.
 
-script.sh
-
 *.swp
 
 .DS_Store

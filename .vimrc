@@ -159,7 +159,7 @@ let g:ycm_filetype_whitelist = {'c': 1, 'cpp': 2, 'python': 3}
 " Turn off syntax checker UI.
 let g:ycm_show_diagnostics_ui = 0
 
-" For python-syntax.
+" For vim-python/python-syntax.
 let g:python_highlight_all = 1
 let g:python_highlight_indent_errors = 0
 let g:python_highlight_space_errors = 0
@@ -180,7 +180,13 @@ Plug 'wincent/command-t', {
     \ }
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer', 'on': []}
 Plug 'vim-python/python-syntax'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
+
+" For ayu-theme/ayu-vim.
+set termguicolors
+let g:ayucolor="dark"
+colorscheme ayu
 
 imap <C-s> <Esc>:w<CR>
 map <C-s> :wa<CR>

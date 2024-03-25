@@ -1,9 +1,9 @@
 # Not part of my dotfiles.
 
 # Do not look for these files in the home directory.
+.DS_Store
 .alacritty.toml
 .bashrc
-.DS_Store
 .gitignore
 .ignore
 README.md

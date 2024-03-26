@@ -21,7 +21,7 @@ ignore_file=$(mktemp)
 sed -E '/^#/d' .ignore > ${ignore_file}
 
 # Delete empty lines.
-sed -E -i '' '/^$/d' ${ignore_file}
+sed -i '' -E '/^$/d' ${ignore_file}
 
 # Sort ignored filenames, as required by `comm'.
 sort ${ignore_file} -o ${ignore_file}
@@ -53,6 +53,6 @@ rm ${tmp}
 rm ${ignore_file}
 
 # Delete all lines containing 'bw' in .zshrc.
-sed -E -i '' '/bw/d' .zshrc 
+sed -i '' -E '/bw/d' .zshrc 
 
 exit 0

@@ -2,6 +2,15 @@
 
 set -uo pipefail
 
+function differ ()
+{
+    file1="$1"
+    file2="$2"
+
+    rc=$(! diff "$file1" "$file2" > /dev/null)
+    return $rc
+}
+
 # Retrieve all files in the current directory.
 files=($(find . -type f -maxdepth 1 | grep -v "\.swp$" | sort))
 for ((i=1; i<=${#files[@]}; i++)); do
@@ -38,13 +47,13 @@ done
 
 # For each source file path,
 for ((i=1; i<=${#source_file_paths[@]}; i++)); do
-    # See if the last copy of the intended file differs from the source.
-    diff ${source_file_paths[$i]} ${intended_files[$i]} > /dev/null
+    source_file_path=${source_file_paths[$i]}
+    intended_file=${intended_files[$i]}
 
-    # If the file has changed,
-    if [[ $? -ne 0 ]]; then
+    # If the last copy of the intended file differs from the source,
+    if differ ${source_file_path} ${intended_file}; then
         # Copy it.
-        cp ${source_file_paths[$i]} ${intended_files[$i]}
+        cp ${source_file_path} ${intended_file}
     fi
 done
 

@@ -53,7 +53,15 @@ alias mffplay='ffplay -fs -autoexit -loglevel warning -stats'
 alias mff='mffplay'
 
 export CLICOLOR=1
-export PATH='/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/usr/local/bin'
+export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.10/bin"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:/usr/bin"
+export PATH="$PATH:/bin"
+export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/sbin"
+export PATH="$PATH:/Applications/VMware Fusion.app/Contents/Public"
+export PATH="$PATH:/Library/Apple/usr/bin"
+export PATH="$PATH:/usr/local/bin"
 
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 

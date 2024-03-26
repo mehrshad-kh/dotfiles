@@ -4,10 +4,12 @@ set -uo pipefail
 
 function differ ()
 {
-    file1="$1"
-    file2="$2"
+    file1=$1
+    file2=$2
 
-    rc=$(! diff "$file1" "$file2" > /dev/null)
+    ! diff $file1 $file2 > /dev/null
+    rc=$?
+
     return $rc
 }
 

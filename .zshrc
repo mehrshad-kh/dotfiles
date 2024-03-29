@@ -19,8 +19,9 @@ alias tman='tman.sh'
 
 alias trash='trash.sh'
 alias makehere='makehere.sh'
+alias mcurl='mcurl.sh'
 alias mkhr='makehere'
-alias co='compile.sh'
+alias cotex='compile_tex.sh'
 
 # Default macOS Vim.
 alias dtclsh='/usr/bin/tclsh'
@@ -38,10 +39,6 @@ alias hvim='/usr/local/Cellar/vim/*/bin/vim'
 # -R: recurse directories.
 alias mctags='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
 
-# -L, --location: Follow the request onto the last location.
-# -O, --remote-name: Write output to a local file named like the remote file we get.
-# -f, --fail: Fail silently.
-alias mcurl='curl -L -O -C - -f  --retry-all-errors --retry-max-time 120'
 alias mclang='clang main.c -o main'
 alias mc='mclang'
 alias mclang++='clang++ main.cpp -o main -std=c++17'

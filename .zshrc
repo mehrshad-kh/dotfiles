@@ -1,6 +1,6 @@
 alias cl='clear'
-
 alias cdl='cd && cl'
+alias cld='cdl'
 
 # -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
 alias cp='cp -i'

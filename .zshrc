@@ -1,4 +1,7 @@
 alias cl='clear'
+
+alias cdl='cd && cl'
+
 # -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
 alias cp='cp -i'
 alias gc='git commit -a -m'
@@ -7,6 +10,7 @@ alias gp='git push'
 alias gs='git status'
 alias la='ls -a'
 alias ls='ls -lFhG'
+
 # -i: Cause mv to write a prompt before moving a file that would overwrite an existing file.
 alias mv='mv -i'
 alias nj='ninja'
@@ -32,6 +36,7 @@ alias hpython3='/usr/local/bin/python3'
 alias hruby='/usr/local/Cellar/ruby/3.2.2_1/bin/ruby'
 alias htclsh='/usr/local/bin/tclsh'
 alias tcl='htclsh'
+
 # Homebrew versions which conflict with system-provided tools.
 alias hvi='/usr/local/Cellar/vim/*/bin/vi'
 alias hvim='/usr/local/Cellar/vim/*/bin/vim'

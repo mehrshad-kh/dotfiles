@@ -9,3 +9,5 @@ alias ls='ls -lFhG --color=auto'
 alias mv='mv -i'
 alias sb='source ~/.bashrc'
 alias mvivado='sudo /tools/Xilinx/Vivado/2023.2/bin/vivado'
+
+projects="$HOME/Desktop/projects"

@@ -20,6 +20,7 @@ alias sqlite='sqlite3'
 alias sql='sqlite'
 alias sz='source ~/.zshrc'
 alias tman='tman.sh'
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 alias trash='trash.sh'
 alias makehere='makehere.sh'
@@ -41,7 +42,7 @@ alias tcl='htclsh'
 alias hvi='/usr/local/Cellar/vim/*/bin/vi'
 alias hvim='/usr/local/Cellar/vim/*/bin/vim'
 
-# -R: recurse directories.
+# -R: recurseivly go through directories.
 alias mctags='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
 
 alias mclang='clang main.c -o main'
@@ -77,6 +78,7 @@ export PATH="$PATH:/Library/TeX/texbin"
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 
 # Local folders.
+cars="$HOME/Documents/Databases/Cars"
 movies="$HOME/Movies/Mine/movies"
 notes="$HOME/Desktop/notes"
 projects="$HOME/Desktop/projects"

@@ -36,12 +36,14 @@ set expandtab
 
 autocmd Filetype make setlocal noexpandtab
 
+" Comment auto-commans.
 autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>
 autocmd FileType cmake,python,tcl,zsh nnoremap <buffer> <localleader>c I# <Esc>
-autocmd FileType sql nnoremap <buffer> <localleader>c I-- <Esc>
+autocmd FileType sql,vhd nnoremap <buffer> <localleader>c I-- <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
-autocmd FileType tex nnoremap <buffer> <localleader>c % <Esc>
+autocmd FileType tex nnoremap <buffer> <localleader>c I% <Esc>
 
+" Uncomment auto-commans.
 autocmd FileType c,cpp,sql,verilog nnoremap <buffer> <localleader>u ^3x
 autocmd FileType cmake,python,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
 

@@ -74,6 +74,9 @@ export PATH="$PATH:$HOME/bin"
 # TeX
 export PATH="$PATH:/Library/TeX/texbin"
 
+# Local folder for projects.
+export projects="$HOME/Desktop/projects"
+
 # Remote folders.
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 
@@ -81,6 +84,5 @@ icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 cars="$HOME/Documents/Databases/Cars"
 movies="$HOME/Movies/Mine/movies"
 notes="$HOME/Desktop/notes"
-projects="$HOME/Desktop/projects"
 series="$HOME/Movies/Mine/series"
 tmp="$HOME/Desktop/tmp"

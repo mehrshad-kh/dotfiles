@@ -41,14 +41,14 @@ autocmd FileType vhdl setlocal shiftwidth=2 tabstop=2
 
 " Comment autocommands.
 autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>
-autocmd FileType cmake,python,tcl,zsh nnoremap <buffer> <localleader>c I# <Esc>
+autocmd FileType cmake,python,ruby,tcl,zsh nnoremap <buffer> <localleader>c I# <Esc>
 autocmd FileType sql,vhdl nnoremap <buffer> <localleader>c I-- <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
 autocmd FileType tex nnoremap <buffer> <localleader>c I% <Esc>
 
 " Uncomment autocommands.
 autocmd FileType c,cpp,sql,verilog,vhdl nnoremap <buffer> <localleader>u ^3x
-autocmd FileType cmake,python,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
+autocmd FileType cmake,python,ruby,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
 
 autocmd BufNewFile *.sh :set filetype=zsh
 autocmd BufNewFile,BufRead .bashrc :set filetype=bash

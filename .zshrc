@@ -15,9 +15,7 @@ alias ls='ls -lFhG'
 alias mv='mv -i'
 alias nj='ninja'
 alias op='open *.app'
-alias python='python3'
-alias sqlite='sqlite3'
-alias sql='sqlite'
+alias sql='sqlite3'
 alias sz='source ~/.zshrc'
 alias tman='tman.sh'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
@@ -27,6 +25,7 @@ alias makehere='makehere.sh'
 alias mcurl='mcurl.sh'
 alias mkhr='makehere'
 alias cotex='compile_tex.sh'
+alias llvm-mca='/usr/local/Cellar/llvm/*/bin/llvm-mca'
 
 # Default macOS Vim.
 alias dtclsh='/usr/bin/tclsh'
@@ -34,7 +33,7 @@ alias dvi='/usr/bin/vi'
 alias dvim='/usr/bin/vim'
 
 alias hpython3='/usr/local/bin/python3'
-alias hruby='/usr/local/Cellar/ruby/3.2.2_1/bin/ruby'
+alias hruby='/usr/local/Cellar/ruby/*/bin/ruby'
 alias htclsh='/usr/local/bin/tclsh'
 alias tcl='htclsh'
 
@@ -44,11 +43,6 @@ alias hvim='/usr/local/Cellar/vim/*/bin/vim'
 
 # -R: recurseivly go through directories.
 alias mctags='sudo ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -o .tags .'
-
-alias mclang='clang main.c -o main'
-alias mc='mclang'
-alias mclang++='clang++ main.cpp -o main -std=c++17'
-alias mc++='mclang++'
 
 # -fs: full screen
 # -autoexit: quit after video ends.
@@ -74,15 +68,17 @@ export PATH="$PATH:$HOME/bin"
 # TeX
 export PATH="$PATH:/Library/TeX/texbin"
 
-# Local folder for projects.
-export projects="$HOME/Desktop/projects"
-
 # Remote folders.
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 
 # Local folders.
 cars="$HOME/Documents/Databases/Cars"
+docs="$HOME/Documents"
 movies="$HOME/Movies/Mine/movies"
 notes="$HOME/Desktop/notes"
+projects="$HOME/Desktop/projects"
 series="$HOME/Movies/Mine/series"
 tmp="$HOME/Desktop/tmp"
+
+eval "$(rbenv init - zsh)"
+LDFLAGS="-L/usr/local/opt/llvm/lib/c++ -Wl,-rpath,/usr/local/opt/llvm/lib/c++"

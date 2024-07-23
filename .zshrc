@@ -13,8 +13,6 @@ alias ls='ls -lFhG'
 
 # -i: Cause mv to write a prompt before moving a file that would overwrite an existing file.
 alias mv='mv -i'
-alias nj='ninja'
-alias op='open *.app'
 alias sql='sqlite3'
 alias sz='source ~/.zshrc'
 alias tman='tman.sh'
@@ -72,8 +70,7 @@ export PATH="$PATH:/Library/TeX/texbin"
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 
 # Local folders.
-cars="$HOME/Documents/Databases/Cars"
-docs="$HOME/Documents"
+db="$HOME/Documents/Databases"
 movies="$HOME/Movies/Mine/movies"
 notes="$HOME/Desktop/notes"
 projects="$HOME/Desktop/projects"

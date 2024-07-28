@@ -18,11 +18,16 @@ set smartindent
 set smarttab
 set number
 
-" Open split tabs to the right.
+" Open split tabs in below right.
+set splitbelow
 set splitright
 
 " For bi-directional text.
 " set termbidi
+
+" Used for filename completion.
+set wildmode=longest,list,full
+set wildmenu
 
 set ruler
 

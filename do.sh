@@ -2,6 +2,7 @@
 
 set -uo pipefail
 
+# Used in earlier versions.
 function differ ()
 {
     file1=$1
@@ -55,7 +56,7 @@ for ((i=1; i<=${#source_file_paths[@]}; i++)); do
     # If the last copy of the intended file differs from the source,
     if differ ${source_file_path} ${intended_file}; then
         # Copy it.
-        cp ${source_file_path} ${intended_file}
+        rsync ${source_file_path} ${intended_file}
     fi
 done
 

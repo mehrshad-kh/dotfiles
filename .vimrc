@@ -37,8 +37,8 @@ set tabstop=2
 
 autocmd FileType make setlocal noexpandtab
 
-autocmd FileType bash,cpp,qml,ruby,vhdl,zsh setlocal shiftwidth=2 tabstop=2 
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
+" autocmd FileType bash,cpp,qml,ruby,vhdl,zsh setlocal shiftwidth=2 tabstop=2 
+autocmd FileType javascript,python setlocal shiftwidth=4 tabstop=4
 
 " Comment autocommands.
 autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>

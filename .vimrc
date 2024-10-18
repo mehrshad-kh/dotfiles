@@ -24,7 +24,7 @@ set splitbelow
 set splitright
 
 " Display bi-directional text correctly.
-" set termbidi
+set termbidi
 
 " Used for filename completion.
 set wildmode=longest,list,full

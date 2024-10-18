@@ -13,6 +13,7 @@ else
     colorscheme industry
   endif
 endif
+
 set autoindent
 set smartindent
 set smarttab
@@ -22,7 +23,7 @@ set number
 set splitbelow
 set splitright
 
-" For bi-directional text.
+" Display bi-directional text correctly.
 " set termbidi
 
 " Used for filename completion.
@@ -35,20 +36,23 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 
-autocmd FileType make setlocal noexpandtab
+" Backspace over everything in insert mode.
+set backspace=indent,eol,start 
 
-" autocmd FileType bash,cpp,qml,ruby,vhdl,zsh setlocal shiftwidth=2 tabstop=2 
+autocmd FileType make setlocal noexpandtab
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
+
 autocmd FileType javascript,python setlocal shiftwidth=4 tabstop=4
 
 " Comment autocommands.
-autocmd FileType c,cpp,verilog nnoremap <buffer> <localleader>c I// <Esc>
+autocmd FileType c,cpp,qml,verilog nnoremap <buffer> <localleader>c I// <Esc>
 autocmd FileType cmake,python,ruby,tcl,zsh nnoremap <buffer> <localleader>c I# <Esc>
 autocmd FileType sql,vhdl nnoremap <buffer> <localleader>c I-- <Esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
 autocmd FileType tex nnoremap <buffer> <localleader>c I% <Esc>
 
 " Uncomment autocommands.
-autocmd FileType c,cpp,sql,verilog,vhdl nnoremap <buffer> <localleader>u ^3x
+autocmd FileType c,cpp,qml,sql,verilog,vhdl nnoremap <buffer> <localleader>u ^3x
 autocmd FileType cmake,python,ruby,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
 
 autocmd BufNewFile *.sh :set filetype=zsh
@@ -56,8 +60,8 @@ autocmd BufNewFile,BufRead .bashrc :set filetype=bash
 autocmd BufNewFile,BufRead *.v :set filetype=verilog
 autocmd BufNewFile,BufRead *.verilog :set filetype=verilog
 
-" Backspace over everything in insert mode.
-set backspace=indent,eol,start 
+imap <C-s> <Esc>:w<CR>
+map <C-s> :wa<CR>
 
 " I use vim-plug as the plug-in manager.
 " Install vim-plug if not found.
@@ -74,6 +78,9 @@ let g:ycm_auto_hover = ''
 
 " Disable completion suggestions.
 let g:ycm_auto_trigger = 0
+
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
 
 " Use installed clangd, not YCM-bundled clangd which doesn't get updated.
 let g:ycm_clangd_binary_path = exepath("clangd")
@@ -105,8 +112,6 @@ set termguicolors
 let g:ayucolor="dark"
 colorscheme ayu
 
-imap <C-s> <Esc>:w<CR>
-map <C-s> :wa<CR>
 map <leader>d :YcmCompleter GetDoc<CR>
 map <leader>j :YcmCompleter GoToDefinition<CR>
 map <leader>y :call plug#load('YouCompleteMe')<CR>

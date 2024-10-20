@@ -37,13 +37,14 @@ set tabstop=2
 set backspace=indent,eol,start 
 
 " Set up Persian.
+" Run `:call Persian()` to use.
 function! Persian()
   " Display bi-directional text correctly.
   set termbidi
 
   " set keymap=persian
 
-  " Conceal U+200C (ZWNJ, aka 'نیم فاصله') with '|'.
+  " Conceal U+200C (ZWNJ, aka 'nim fasele') with '|'.
   call matchadd('Conceal', '\%u200c', 10, -1, {'conceal':'|'})
   set conceallevel=2 concealcursor=nvi
 endfunction

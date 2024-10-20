@@ -23,9 +23,6 @@ set number
 set splitbelow
 set splitright
 
-" Display bi-directional text correctly.
-set termbidi
-
 " Used for filename completion.
 set wildmode=longest,list,full
 set wildmenu
@@ -38,6 +35,19 @@ set tabstop=2
 
 " Backspace over everything in insert mode.
 set backspace=indent,eol,start 
+
+" Set up Persian.
+function! Persian()
+  " Display bi-directional text correctly.
+  set termbidi
+
+  " set keymap=persian
+
+  " Conceal U+200C (ZWNJ, aka 'نیم فاصله') with '|'.
+  call matchadd('Conceal', '\%u200c', 10, -1, {'conceal':'|'})
+  set conceallevel=2 concealcursor=nvi
+endfunction
+
 
 autocmd FileType make setlocal noexpandtab
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2

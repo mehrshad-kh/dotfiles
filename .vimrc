@@ -36,6 +36,9 @@ set tabstop=2
 " Backspace over everything in insert mode.
 set backspace=indent,eol,start 
 
+" Change directory to the parent directory of current file.
+set autochdir
+
 " Set up Persian.
 " Run `:call Persian()` to use.
 function! Persian()
@@ -47,11 +50,26 @@ function! Persian()
   " Conceal U+200C (ZWNJ, aka 'nim fasele') with '|'.
   call matchadd('Conceal', '\%u200c', 10, -1, {'conceal':'|'})
   set conceallevel=2 concealcursor=nvi
+
+  " Disable conceal for LaTeX files.
+  let g:tex_conceal = ''
+
+  " Reload file.
+  edit
 endfunction
 
+function! InitNetrw()
+  colorscheme desert
+  set number
+  nmap <buffer> <TAB> mf mx
+endfunction
+
+augroup init_netrw
+  autocmd!
+  autocmd filetype netrw call InitNetrw()
+augroup END
 
 autocmd FileType make setlocal noexpandtab
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
 
 autocmd FileType javascript,python setlocal shiftwidth=4 tabstop=4
 
@@ -71,6 +89,8 @@ autocmd BufNewFile,BufRead .bashrc :set filetype=bash
 autocmd BufNewFile,BufRead *.v :set filetype=verilog
 autocmd BufNewFile,BufRead *.verilog :set filetype=verilog
 
+cabbrev h vert h
+cabbrev help vert help
 imap <C-s> <Esc>:w<CR>
 map <C-s> :wa<CR>
 

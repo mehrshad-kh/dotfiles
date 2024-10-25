@@ -32,7 +32,6 @@ alias mcurl='mcurl.sh'
 alias mkhr='makehere'
 alias note='note.sh'
 alias ip='myip.sh'
-alias vilen='vilen.sh'
 
 # -fs: full screen
 # -autoexit: quit after video ends.
@@ -76,12 +75,14 @@ export PATH="$PATH:/Library/TeX/texbin"
 # Qt
 export PATH="$PATH:$HOME/Qt/6.5.2/macos/bin/"
 
+export notes="$HOME/Desktop/notes"
+
 # Remote folders.
-icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
+icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+fifth="$icloud/Home/Documents/PDF/Uni/Courses/5th"
 
 # Local folders.
 db="$HOME/Documents/Databases"
 movies="$HOME/Movies/Mine/movies"
-export notes="$HOME/Desktop/notes"
 prj="$HOME/Desktop/projects"
 series="$HOME/Movies/Mine/series"

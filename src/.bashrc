@@ -1,10 +1,6 @@
 # Load common rc file.
 [[ -r ~/.shellrc ]] && source ~/.shellrc
 
-# Set shell prompt.
-# Same as zsh prompt on macOS.
-export PS1='\u@\h \W $ '
-
 # Do not auto-complete hidden files.
 bind 'set match-hidden-files off'
 

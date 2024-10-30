@@ -1,0 +1,7 @@
+.alacritty.toml
+.bashrc
+.inputrc
+.shellrc
+.tmux.conf
+.vimrc
+.zshrc

@@ -1,3 +1,7 @@
+# This file cotains basic RUN COMMANDS (rc) common to
+# both bash and zsh.
+# Take a look at .bashrc or .zshrc for a better understanding.
+
 alias cl='clear'
 
 # -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.

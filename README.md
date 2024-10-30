@@ -2,7 +2,7 @@ dotfiles
 ========
 
 ## Introduction
-A collection of my dotfiles. Please look into `[src/][5]`.
+A collection of my dotfiles. Please look into `src/`.
 
 ## Discussion
 

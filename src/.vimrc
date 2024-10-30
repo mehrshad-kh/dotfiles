@@ -1,11 +1,22 @@
+" From the beginning of the file till `PLUG-INS`
+" uses only basic Vim features. Hence, it has minimal
+" impact on performance or space.
+
 set enc=utf-8
+
+" Set file encoding.
 set fenc=utf-8
+
+" Set terminal encoding.
 set termencoding=utf-8
 
 " Disable vi compatibility (emulation of old bugs).
 set nocompatible
 
+" Enable syntax highlighting.
 syntax on
+
+" Set color scheme based on platform.
 if has('macunix')
   colorscheme slate
 else
@@ -14,9 +25,13 @@ else
   endif
 endif
 
+" Automatically indent lines.
 set autoindent
+
 set smartindent
 set smarttab
+
+" Set line numbers.
 set number
 
 " Open split tabs in below right.
@@ -29,6 +44,7 @@ set wildmenu
 
 set ruler
 
+" Expand tab key to spaces.
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -54,21 +70,25 @@ function! Persian()
   " Disable conceal for LaTeX files.
   let g:tex_conceal = ''
 
-  " Reload file.
+  " Reload file for a proper view.
   edit
 endfunction
 
+" Set up netrw, the built-in plug-in for
+" viewing directory content.
 function! InitNetrw()
   colorscheme desert
   set number
   nmap <buffer> <TAB> mf mx
 endfunction
 
+" Automatically call InitNetrw().
 augroup init_netrw
   autocmd!
   autocmd filetype netrw call InitNetrw()
 augroup END
 
+" Do not expand tab in Makefiles.
 autocmd FileType make setlocal noexpandtab
 
 autocmd FileType javascript,python setlocal shiftwidth=4 tabstop=4
@@ -89,10 +109,19 @@ autocmd BufNewFile,BufRead .bashrc :set filetype=bash
 autocmd BufNewFile,BufRead *.v :set filetype=verilog
 autocmd BufNewFile,BufRead *.verilog :set filetype=verilog
 
+" Use `:h` as an abbrevation for `:vert h`,
+" hence opening help in a vertical split.
 cabbrev h vert h
+
+" Use `:help` as an abbrevation for `:vert help`,
+" hence opening help in a vertical split.
 cabbrev help vert help
-imap <C-s> <Esc>:w<CR>
+
+" Set Ctrl+S to write changes to all files.
+imap <C-s> <Esc>:wa<CR>
 map <C-s> :wa<CR>
+
+" PLUG-INS
 
 " I use vim-plug as the plug-in manager.
 " Install vim-plug if not found.

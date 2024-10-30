@@ -3,7 +3,6 @@
 # Do not look for these files in the home directory.
 .DS_Store
 .alacritty.toml
-.bashrc
 .gitignore
 .ignore
 README.md

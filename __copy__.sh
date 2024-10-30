@@ -64,7 +64,4 @@ done
 rm ${tmp}
 rm ${ignore_file}
 
-# Delete all lines containing 'bw' in .zshrc.
-sed -i '' -E '/bw/d' .zshrc 
-
 exit 0

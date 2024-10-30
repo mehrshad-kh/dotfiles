@@ -1,13 +1,16 @@
-# Change PS1 to the shell prompt you prefer.
+# Load common rc file.
+[[ -r ~/.shellrc ]] && source ~/.shellrc
 
-alias cl='clear'
-# -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
-alias cp='cp -i'
-alias la='ls -a'
-alias ls='ls -lFhG --color=auto'
-# -i: Cause mv to write a prompt before moving a file that would overwrite an existing file.
-alias mv='mv -i'
+# Set shell prompt.
+# Same as zsh prompt on macOS.
+export PS1='\u@\h \W $ '
+
+# Do not auto-complete hidden files.
+bind 'set match-hidden-files off'
+
+# Set Linux-specific options.
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias mvivado='sudo /tools/Xilinx/Vivado/2023.2/bin/vivado'
+fi
+
 alias sb='source ~/.bashrc'
-alias mvivado='sudo /tools/Xilinx/Vivado/2023.2/bin/vivado'
-
-projects="$HOME/Desktop/projects"

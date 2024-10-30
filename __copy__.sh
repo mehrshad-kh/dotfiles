@@ -1,17 +1,6 @@
 #!/bin/zsh
 
-set -uo pipefail
-
-function differ ()
-{
-  file1=$1
-  file2=$2
-
-  ! diff $file1 $file2 > /dev/null
-  rc=$?
-
-  return $rc
-}
+set -euo pipefail
 
 valid=config/valid
 ignore=config/ignore
@@ -43,11 +32,8 @@ for ((i=1; i<=${#source_file_paths[@]}; i++)); do
   source_file_path=${source_file_paths[$i]}
   intended_file=${intended_files[$i]}
 
-    # If the last copy of the intended file differs from the source,
-    if differ ${source_file_path} ${intended_file}; then
-      # Copy it.
-      rsync ${source_file_path} ${intended_file}
-    fi
-  done
+  # Copy if it has changed.
+  rsync ${source_file_path} ${intended_file}
+done
 
 exit 0

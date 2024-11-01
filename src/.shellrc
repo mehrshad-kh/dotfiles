@@ -3,6 +3,8 @@
 # Take a look at .bashrc or .zshrc for a better understanding.
 
 alias cl='clear'
+alias cdl='cl && cd'
+alias cld='cl && cd'
 
 # -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
 alias cp='cp -i'

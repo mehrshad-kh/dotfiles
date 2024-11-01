@@ -108,6 +108,7 @@ autocmd FileType c,cpp,qml,sql,verilog,vhdl nnoremap <buffer> <localleader>u ^3x
 autocmd FileType cmake,python,ruby,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
 
 autocmd BufNewFile *.sh :set filetype=zsh
+autocmd BufRead .shellrc :set filetype=bash
 autocmd BufNewFile,BufRead .bashrc :set filetype=bash
 autocmd BufNewFile,BufRead *.v :set filetype=verilog
 autocmd BufNewFile,BufRead *.verilog :set filetype=verilog

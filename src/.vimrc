@@ -70,7 +70,8 @@ function! Persian()
   " Disable conceal for LaTeX files.
   let g:tex_conceal = ''
 
-  " Reload file for a proper view.
+  " Write and reload the file for a proper view.
+  write
   edit
 endfunction
 

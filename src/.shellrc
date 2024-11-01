@@ -82,7 +82,8 @@ export notes="$HOME/Desktop/notes"
 
 # Remote folders.
 icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-fifth="$icloud/Home/Documents/PDF/Uni/Courses/5th"
+txtbk="$icloud/Home/Documents/PDF/Textbooks/Computer Eng."
+uni="$icloud/Home/Documents/PDF/Uni/Courses/5th"
 
 # Local folders.
 db="$HOME/Documents/Databases"

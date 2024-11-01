@@ -88,10 +88,13 @@ augroup init_netrw
   autocmd filetype netrw call InitNetrw()
 augroup END
 
+" Delete trailing whitespace characters in TeX files on write.
+autocmd BufWrite *.tex :%s/\s\+$//ge
+
 " Do not expand tab in Makefiles.
 autocmd FileType make setlocal noexpandtab
 
-autocmd FileType javascript,python setlocal shiftwidth=4 tabstop=4
+autocmd FileType javascript,python,tex setlocal shiftwidth=4 tabstop=4
 
 " Comment autocommands.
 autocmd FileType c,cpp,qml,verilog nnoremap <buffer> <localleader>c I// <Esc>

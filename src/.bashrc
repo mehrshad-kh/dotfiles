@@ -8,6 +8,9 @@ else
   echo >&2 'error: ~/.shellrc could not be found'
 fi
 
+# Customize bash prompt
+export PS1='\u@\h \W $ '
+
 # Do not auto-complete hidden files.
 bind 'set match-hidden-files off'
 

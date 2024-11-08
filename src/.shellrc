@@ -2,9 +2,9 @@
 # both bash and zsh.
 # Take a look at .bashrc or .zshrc for a better understanding.
 
-alias cl='clear'
+# alias cl='clear'
 alias cdl='cl && cd'
-alias cld='cl && cd'
+alias cld='cdl'
 
 # -i: Cause cp to write a prompt before copying a file that would overwrite an existing file.
 alias cp='cp -i'
@@ -12,7 +12,7 @@ alias du='du -sh'
 alias gc='git commit -a -m'
 alias gf='git fetch'
 alias gp='git push'
-alias gs='git status'
+# alias gs='git status'
 alias la='ls -a'
 alias ln='ln -is'
 alias ls='ls -lFhG'
@@ -26,17 +26,6 @@ alias vzs='vim ~/.zshrc'
 alias llvm-mca='/usr/local/Cellar/llvm/*/bin/llvm-mca'
 alias sql='sqlite3'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-
-# Script shortcuts
-alias chrono='chrono.sh'
-alias cotex='compile_tex.sh'
-alias tman='tman.sh'
-alias trash='trash.sh'
-alias makehere='makehere.sh'
-alias mcurl='mcurl.sh'
-alias mkhr='makehere'
-alias note='note.sh'
-alias ip='myip.sh'
 
 # -fs: full screen
 # -autoexit: quit after video ends.
@@ -83,9 +72,9 @@ export PATH="$PATH:$HOME/Qt/6.5.2/macos/bin/"
 export notes="$HOME/Desktop/notes"
 
 # Remote folders.
-icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-txtbk="$icloud/Home/Documents/PDF/Textbooks/Computer Eng."
-uni="$icloud/Home/Documents/PDF/Uni/Courses/5th"
+icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs/mkh"
+textbooks="$icloud/Documents/PDF/Textbooks/Computer Eng."
+uni="$icloud/Documents/PDF/Uni/Courses/5th"
 
 # Local folders.
 db="$HOME/Documents/Databases"

@@ -70,8 +70,7 @@ function! Persian()
   " Disable conceal for LaTeX files.
   let g:tex_conceal = ''
 
-  " Write and reload the file for a proper view.
-  write
+  " Reload the file for a proper view.
   edit
 endfunction
 
@@ -79,23 +78,32 @@ endfunction
 " viewing directory content.
 function! InitNetrw()
   colorscheme desert
+
+  " Set line numbers.
   set number
-  nmap <buffer> <TAB> mf mx
+
+  " Hide the upper banner.
+  let g:netrw_banner = 0
+
+  " Map tab key to `Gx` in normal mode.
+  " This way, one could type `n<TAB>` where n is a number
+  " to open the file at line number `n`.
+  nmap <TAB> Gx
 endfunction
 
 " Automatically call InitNetrw().
-augroup init_netrw
+augroup initializing_netrw
   autocmd!
   autocmd filetype netrw call InitNetrw()
 augroup END
 
 " Delete trailing whitespace characters in TeX files on write.
-autocmd BufWrite *.tex :%s/\s\+$//ge
+" autocmd BufWrite *.tex :%s/\s\+$//ge
 
 " Do not expand tab in Makefiles.
 autocmd FileType make setlocal noexpandtab
 
-autocmd FileType javascript,python,tex setlocal shiftwidth=4 tabstop=4
+autocmd FileType c,javascript,python,tex setlocal shiftwidth=4 tabstop=4
 
 " Comment autocommands.
 autocmd FileType c,cpp,qml,verilog nnoremap <buffer> <localleader>c I// <Esc>

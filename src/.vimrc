@@ -55,6 +55,12 @@ set backspace=indent,eol,start
 " Change directory to the parent directory of current file.
 set autochdir
 
+" Convert Unicode code points to legible characters.
+" For example, convert `\u0628` to `ب` 
+function! ConvertUnicode()
+  %s/\\u\(\x\{4}\)/\=nr2char(str2nr(submatch(1),16))/g
+endfunction
+
 " Set up Persian.
 " Run `:call Persian()` to use.
 function! Persian()
@@ -69,9 +75,6 @@ function! Persian()
 
   " Disable conceal for LaTeX files.
   let g:tex_conceal = ''
-
-  " Reload the file for a proper view.
-  edit
 endfunction
 
 " Set up netrw, the built-in plug-in for
@@ -85,6 +88,16 @@ function! InitNetrw()
   " Hide the upper banner.
   let g:netrw_banner = 0
 
+  " The following two lines disable display of
+  " hidden files, i.e., those starting with a dot.
+  "
+  " In addition, one can cycle through different displays
+  " with `a`.
+  "
+  " Source: https://vi.stackexchange.com/a/18678/44759
+  let ghregex = '\(^\|\s\s\)\zs\.\S\+'
+  let g:netrw_list_hide = ghregex
+
   " Map tab key to `Gx` in normal mode.
   " This way, one could type `n<TAB>` where n is a number
   " to open the file at line number `n`.
@@ -94,7 +107,7 @@ endfunction
 " Automatically call InitNetrw().
 augroup initializing_netrw
   autocmd!
-  autocmd filetype netrw call InitNetrw()
+  autocmd FileType netrw call InitNetrw()
 augroup END
 
 " Delete trailing whitespace characters in TeX files on write.
@@ -103,18 +116,7 @@ augroup END
 " Do not expand tab in Makefiles.
 autocmd FileType make setlocal noexpandtab
 
-autocmd FileType c,javascript,python,tex setlocal shiftwidth=4 tabstop=4
-
-" Comment autocommands.
-autocmd FileType c,cpp,qml,verilog nnoremap <buffer> <localleader>c I// <Esc>
-autocmd FileType cmake,python,ruby,tcl,zsh nnoremap <buffer> <localleader>c I# <Esc>
-autocmd FileType sql,vhdl nnoremap <buffer> <localleader>c I-- <Esc>
-autocmd FileType vim nnoremap <buffer> <localleader>c I" <Esc>
-autocmd FileType tex nnoremap <buffer> <localleader>c I% <Esc>
-
-" Uncomment autocommands.
-autocmd FileType c,cpp,qml,sql,verilog,vhdl nnoremap <buffer> <localleader>u ^3x
-autocmd FileType cmake,python,ruby,tex,vim,zsh nnoremap <buffer> <localleader>u ^2x
+autocmd FileType asm,c,cpp,javascript,make,python,tex setlocal shiftwidth=4 tabstop=4
 
 autocmd BufNewFile *.sh :set filetype=zsh
 autocmd BufRead .shellrc :set filetype=bash
@@ -124,15 +126,15 @@ autocmd BufNewFile,BufRead *.verilog :set filetype=verilog
 
 " Use `:h` as an abbrevation for `:vert h`,
 " hence opening help in a vertical split.
-cabbrev h vert h
+" cabbrev h vert h
 
 " Use `:help` as an abbrevation for `:vert help`,
 " hence opening help in a vertical split.
-cabbrev help vert help
+" cabbrev help vert help
 
 " Set Ctrl+S to write changes to all files.
-imap <C-s> <Esc>:wa<CR>
-map <C-s> :wa<CR>
+" imap <C-s> <Esc>:wa<CR>
+" map <C-s> :wa<CR>
 
 " PLUG-INS
 
@@ -144,7 +146,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " Use the Ruby implementation of Command-T.
-let g:CommandTPreferredImplementation = 'ruby'
+" let g:CommandTPreferredImplementation = 'ruby'
 
 " Disable showing documentation in a pop-up.
 let g:ycm_auto_hover = ''
@@ -174,9 +176,9 @@ let g:python_highlight_space_errors = 0
 call plug#begin()
 Plug 'ayu-theme/ayu-vim'
 Plug 'vim-python/python-syntax'
-Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-    \ }
+" Plug 'wincent/command-t', {
+    " \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+    " \ }
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer', 'on': []}
 call plug#end()
 

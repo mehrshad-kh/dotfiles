@@ -2,12 +2,8 @@
 " uses only basic Vim features. Hence, it has minimal
 " impact on performance or space.
 
-set enc=utf-8
-
-" Set file encoding.
-set fenc=utf-8
-
-" Set terminal encoding.
+set encoding=utf-8
+set fileencoding=utf-8
 set termencoding=utf-8
 
 " Disable vi compatibility (emulation of old bugs).
@@ -56,7 +52,7 @@ set backspace=indent,eol,start
 set autochdir
 
 " Convert Unicode code points to legible characters.
-" For example, convert `\u0628` to `ب` 
+" For example, convert `\u0628` to `ب`.
 function! ConvertUnicode()
   %s/\\u\(\x\{4}\)/\=nr2char(str2nr(submatch(1),16))/g
 endfunction
@@ -67,7 +63,7 @@ function! Persian()
   " Display bi-directional text correctly.
   set termbidi
 
-  " set keymap=persian
+  set keymap=persian
 
   " Conceal U+200C (ZWNJ, aka 'nim fasele') with '|'.
   call matchadd('Conceal', '\%u200c', 10, -1, {'conceal':'|'})
@@ -97,11 +93,6 @@ function! InitNetrw()
   " Source: https://vi.stackexchange.com/a/18678/44759
   let ghregex = '\(^\|\s\s\)\zs\.\S\+'
   let g:netrw_list_hide = ghregex
-
-  " Map tab key to `Gx` in normal mode.
-  " This way, one could type `n<TAB>` where n is a number
-  " to open the file at line number `n`.
-  nmap <TAB> Gx
 endfunction
 
 " Automatically call InitNetrw().
@@ -118,23 +109,11 @@ autocmd FileType make setlocal noexpandtab
 
 autocmd FileType asm,c,cpp,javascript,make,python,tex setlocal shiftwidth=4 tabstop=4
 
-autocmd BufNewFile *.sh :set filetype=zsh
+" autocmd BufNewFile *.sh :set filetype=zsh
 autocmd BufRead .shellrc :set filetype=bash
 autocmd BufNewFile,BufRead .bashrc :set filetype=bash
 autocmd BufNewFile,BufRead *.v :set filetype=verilog
 autocmd BufNewFile,BufRead *.verilog :set filetype=verilog
-
-" Use `:h` as an abbrevation for `:vert h`,
-" hence opening help in a vertical split.
-" cabbrev h vert h
-
-" Use `:help` as an abbrevation for `:vert help`,
-" hence opening help in a vertical split.
-" cabbrev help vert help
-
-" Set Ctrl+S to write changes to all files.
-" imap <C-s> <Esc>:wa<CR>
-" map <C-s> :wa<CR>
 
 " PLUG-INS
 

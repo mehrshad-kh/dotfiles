@@ -17,7 +17,6 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 # -fs: full screen
 # -autoexit: quit after video ends.
 alias mffplay='ffplay -fs -autoexit -loglevel warning -stats'
-alias mff='mffplay'
 
 # Default macOS Vim.
 alias dtclsh='/usr/bin/tclsh'
@@ -56,9 +55,9 @@ export PATH="$PATH:/Library/TeX/texbin"
 # Qt
 export PATH="$PATH:$HOME/Qt/6.5.2/macos/bin/"
 
-export notes="$HOME/Desktop/notes"
+export HOMEBREW_NO_ENV_HINTS=1
 
 # Use as follows:
 # $ top -stats $keys
-keys='pid,command,cpu,csw,time,mem,state,uid'
+keys='pid,command,cpu,csw,threads,time,mem,state,uid'
 

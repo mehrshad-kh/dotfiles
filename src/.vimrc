@@ -71,6 +71,13 @@ function! Persian()
 
   " Disable conceal for LaTeX files.
   let g:tex_conceal = ''
+
+  " Disable indentation.
+  set indentexpr&
+
+  " Save and reload the file.
+  :w
+  :e
 endfunction
 
 " Set up netrw, the built-in plug-in for
@@ -109,7 +116,7 @@ autocmd FileType make setlocal noexpandtab
 
 autocmd FileType asm,c,cpp,javascript,make,python,tex setlocal shiftwidth=4 tabstop=4
 
-" autocmd BufNewFile *.sh :set filetype=zsh
+autocmd BufNewFile *.sh :set filetype=bash
 autocmd BufRead .shellrc :set filetype=bash
 autocmd BufNewFile,BufRead .bashrc :set filetype=bash
 autocmd BufNewFile,BufRead *.v :set filetype=verilog

@@ -58,8 +58,8 @@ function! ConvertUnicode()
 endfunction
 
 " Set up Persian.
-" Run `:call Persian()` to use.
-function! Persian()
+" Run `:call SetUpPersian()` to use.
+function! SetUpPersian()
   " Display bi-directional text correctly.
   set termbidi
 
@@ -72,17 +72,17 @@ function! Persian()
   " Disable conceal for LaTeX files.
   let g:tex_conceal = ''
 
-  " Disable indentation.
-  set indentexpr&
-
   " Save and reload the file.
   :w
   :e
+
+  " Disable indentation.
+  set indentexpr&
 endfunction
 
 " Set up netrw, the built-in plug-in for
 " viewing directory content.
-function! InitNetrw()
+function! SetUpNetrw()
   colorscheme desert
 
   " Set line numbers.
@@ -102,10 +102,10 @@ function! InitNetrw()
   let g:netrw_list_hide = ghregex
 endfunction
 
-" Automatically call InitNetrw().
-augroup initializing_netrw
+" Automatically call SetUpNetrw().
+augroup netrw_initialization
   autocmd!
-  autocmd FileType netrw call InitNetrw()
+  autocmd FileType netrw call SetUpNetrw()
 augroup END
 
 " Delete trailing whitespace characters in TeX files on write.

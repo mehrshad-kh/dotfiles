@@ -1,0 +1,30 @@
+# Biber
+*.blg
+
+**/aux
+
+# Build directory, anywhere in the source tree
+**/build
+
+# Documentation
+ocs/*
+
+# macOS
+.DS_Store
+
+# TeX
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+*.fls
+*.fdb_latexmk
+*.lof
+*.lol
+*.toc
+
+# Vim
+*.swo
+*.swp
+
